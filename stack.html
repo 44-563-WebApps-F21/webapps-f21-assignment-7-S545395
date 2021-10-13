@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html> <head> 
+	
+	<title>Stack as a repository</title>
+	<style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+<body>
+
+	<h2>Naga Sateesh Dommety builds a stack</h2>
+
+	<input id="name" type="text"></input>
+
+	<div class="flex-container" id="target">
+		<div class="stack">stack1</div>   
+		<div class="stack">stack2</div>  
+		<div class="stack">stack3</div>  
+    </div>
+  
+  	<p> Press the button to create an new element of type div and then add it to the container.</p>
+	<button onclick="makeNewDiv()">Push value</button>
+	
+</body>
+<script>
+	function makeNewDiv(){
+		/* make the div and its text */
+		let element = document.createElement("div")
+		element.innerHTML = "an item after 3"
+		element.class = "stack";
+
+		/* add it to the container */
+		document.getElementById('target').appendChild(element)
+		
+	}
+</script>
+</html>	
