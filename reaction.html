@@ -13,8 +13,8 @@
 
   <h2>Naga Sateesh Dommety reaction timer</h2>
 
-  <div id="target">Your time</div>
-  <div id="countdown">Count</div>
+  <div id="target">Your time: </div>
+  <div id="countdown">Count: </div>
 
   <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
   <button type="button" class="btn btn-primary" onclick="recordReact()">React Now</button>
@@ -32,11 +32,12 @@
         function startTime() {
             myTime = undefined;
             buttonTime = Date.now();
+            let randomCountDown = Math.round(Math.random() * (10 - 2) + 2);
 
-            for(let i=0;i<4;i++){
+            for(let i=0;i<randomCountDown;i++){
               setTimeout(() => {
                   document.getElementById("countdown").innerHTML = i;
-                }, (3-i)*1000);
+                }, (randomCountDown-i)*1000);
             }
 
               setTimeout(() => {
@@ -48,7 +49,7 @@
                   let elapsedTime = (-1) * (buttonTime - myTime);
                   document.getElementById("target").innerHTML = "Time was "+elapsedTime+" ms";
                 }
-              }, 3000)
+              }, (randomCountDown-1)*1000)
             }
   </script>
 
